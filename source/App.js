@@ -1,10 +1,24 @@
 import React from 'react';
 
-class Hello extends React.Component {
+class GroceryList extends React.Component {
 	render(){
 		return (
-			<h1>Hello World</h1>
-		);
+			<ul>
+				<ListItem quantity="1" name="Bread" />
+				<ListItem quantity="2" name="Eggs" />
+				<ListItem quantity="3" name="Milk" />
+			</ul>
+		)
 	}
 }
-React.render(<Hello />, document.getElementById('root'));
+
+class ListItem extends React.Component{
+	render(){
+		return (
+			<li>
+				{this.props.quantity} * {this.props.name}
+			</li>
+		)
+	}
+}
+React.render(<GroceryList />, document.getElementById('root'));
